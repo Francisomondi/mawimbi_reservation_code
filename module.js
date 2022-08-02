@@ -36,3 +36,14 @@ if (!fs.existsSync("./assets")) {
 
 console.log(people);
 console.log(os.platform());
+
+//delete files
+
+if (fs.existsSync("./docs/text1.txt")) {
+  fs.unlink("./docs/text1.txt", err => {
+    if (err) {
+      console.log(err);
+    }
+    console.log("file deletede successfully");
+  });
+}
