@@ -18,3 +18,8 @@ app.get("/about", (req, res) => {
         root: __dirname
     });
 });
+
+//redirect
+app.get("/about-us", (req, res) => {
+    res.redirect("/about");
+});
