@@ -1,12 +1,18 @@
 const http = require("http");
 
 const server = http.createServer((req, res) => {
-    console.log(req.url, req.method)
+    console.log(req.url, req.method);
 
-    res.setHeader("content-type", "text/html")
-    res.write("<h1>hello Francis</h1>")
-    res.write("<p>this is where all the frontend html is displayed</p>")
-})
+    //setting meader
+    res.setHeader("Content-type", "text/html");
+
+    res.write("<head> <link rel='stylesheet' href='style.css'></head>");
+    res.write("<h2> Mawimbi Sea Food Restaurant </h2>");
+    res.write("<p>this is going to be a mawimbi sea food restaurant reservation form </p>");
+    res.end();
+
+
+});
 server.listen(3000, "localhost", () => {
-    console.log("server started on port 3000")
+    console.log("server started on port 3000");
 })
