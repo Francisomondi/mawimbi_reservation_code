@@ -22,6 +22,13 @@ const server = http.createServer((req, res) => {
             path += "404.html";
             res.statusCode = 404;
             break;
+
+        case "/about-me":
+            res.statusCode = 301;
+            res.setHeader("Location", "/about");
+            res.end();
+
+            break;
     }
 
     fs.readFile(path, (err, data) => {
