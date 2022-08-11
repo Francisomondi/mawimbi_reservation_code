@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/Francisomondi/mawimbi_reservation_code/issues"
   },
-  "homepage": "https://github.com/Francisomondi/mawimbi_reservation_code#readme"
+  "homepage": "https://github.com/Francisomondi/mawimbi_reservation_code#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "lodash": "^4.17.21"
+  }
 }
