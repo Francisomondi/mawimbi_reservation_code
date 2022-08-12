@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 
     res.render("index", {
         title: "Home",
-        reservations
+        reservations: reservations
     });
 });
 //about route
