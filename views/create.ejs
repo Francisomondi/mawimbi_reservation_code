@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Mawimbi Reservation Form</title>
+</head>
+
+<body class="main_bg">
+
+    <nav>
+        <div>
+            <a href="/">
+                <h1>Mawimbi Ressrvation</h1>
+            </a>
+            <p>Mawimbi Reservation Form</p>
+        </div>
+        <ul>
+            <li><a href="/">Home</a> </li>
+            <li><a href="/about">About</a> </li>
+            <li><a href="/reservation.create">Make Reservations</a> </li>
+
+        </ul>
+    </nav>
+    <div class="form-text">
+        <h1>
+            <span><img src="mawimbi-logo-revised-4.png" width="150px" height="100px" alt="" /></span> Make
+            Reservation
+            <span><img src="mawimbi-logo-revised-4.png" width="150px" height="100px" alt="" /></span>
+        </h1>
+
+    </div>
+    <div class="form">
+
+        <div class="main-form">
+            <form action="index.php">
+                <div>
+                    <span>FIRST NAME</span>
+                    <input type="text" name="name" id="name" required placeholder="First Name" />
+                </div>
+                <div>
+                    <span>LAST NAME</span>
+                    <input type="text" name="name" id="name" required placeholder="Last Name" />
+                </div>
+                <div>
+                    <span>EMAIL</span>
+                    <input type="email" name="name" id="name" required placeholder="Email" />
+                </div>
+                <div>
+                    <span>GUESTS</span>
+
+                    <select name="guests" id="guests" required>
+                        <option value="">
+                            <---Guests--->
+                        </option>
+                        <option value="1">1</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8 </option>
+
+                    </select>
+                </div>
+                <div>
+                    <span>DATE</span>
+                    <input type="date" name="date" id="date" required placeholder="Date" />
+                </div>
+                <div>
+                    <span>TIME</span>
+
+                    <select name="time" id="time">
+                        <option value="">
+                            <---Time--->
+                        </option>
+                        <option value="1.15pm">1.15pm</option>
+                        <option value="1.30pm">1.30pm</option>
+                        <option value="1.45pm">1.45pm</option>
+                        <option value="2.00pm">2.00pm</option>
+                        <option value="2.15pm">2.15pm</option>
+                        <option value="2.30pm">2.30pm</option>
+                        <option value="2.45pm">2.45pm</option>
+                        <option value="3.00pm">3.00pm</option>
+
+                    </select>
+                </div>
+
+                <div>
+                    <span>COUNTRY</span>
+                    <input type="text" name="name" id="name" required placeholder="Country">
+                </div>
+                <div>
+                    <span>PHONE</span>
+                    <input type="number" name="phone" id="phone" required placeholder="Phone" />
+                </div>
+                <div id="terms">
+                    <span>SPECIAL REQUEST</span>
+                    <textarea type="text" name="name" id="name">
+</textarea>
+                </div>
+                <div id="terms">
+                    <span>RESTAURANTS TERMS & CONDITIONS</span>
+                    <p>
+                        -For a party more than five, kindly call the restaurant, +254 758
+                        956805
+                    </p>
+                </div>
+                <div id="submit">
+                    <input type="submit" name="submit" value="submit" id="submit" />
+                </div>
+                <div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
