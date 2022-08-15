@@ -1,44 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("./partials/head.ejs") %>
+<%- include("./partials/nav.ejs") %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mawimbi Reservation | <%= title %> </title>
-</head>
+<div class="reservation-content">
+    <h2>All Reservations</h2>
+    <% if (reservations.length> 0){%>
+    <%  reservations.forEach(reservation=>{%>
+    <h3 class="name"><%= reservation.firstname %></h3>
+    <p class="email"><%= reservation.email %></p>
+    <p class="phone"><%= reservation.phone %></p>
+    <p class="request"><%= reservation.request %></p>
 
-<body>
-    <nav>
-        <div>
-            <a href="/">
-                <h1>Mawimbi Reservation</h1>
-            </a>
-            <p>Mawimbi Reservation Form</p>
-        </div>
-        <ul>
-            <li><a href="/">Home</a> </li>
-            <li><a href="/about">About</a> </li>
-            <li><a href="/reservation/create">Make Reservations</a> </li>
+    <% })%>
 
-        </ul>
-    </nav>
+    <% } else {%>
+    <p>There are no reservations at the moment</p>
+    <%}%>
 
-    <div class="reservation-content">
-        <h2>All Reservations</h2>
-        <% if (reservations.length> 0){%>
-        <%  reservations.forEach(reservation=>{%>
-        <h3 class="name"><%= reservation.firstname %></h3>
-        <p class="email"><%= reservation.email %></p>
-        <p class="phone"><%= reservation.phone %></p>
-        <p class="request"><%= reservation.request %></p>
 
-        <% })%>
+</div>
+<%- include("./partials/footer.ejs") %>
+    </body>
 
-        <% }%>
 
-    </div>
-
-</body>
-
-</html>
+    </html>

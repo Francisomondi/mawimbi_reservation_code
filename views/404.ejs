@@ -1,35 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mawimbi Reservation | <%= title %> </title>
-</head>
-</title>
-</head>
-
-<body>
-    <nav>
-        <div>
-            <a href="/">
-                <h1>Mawimbi Ressrvation</h1>
-            </a>
-            <p>Mawimbi Reservation Form</p>
-        </div>
-        <ul>
-            <li><a href="/">Home</a> </li>
-            <li><a href="/about">About Us</a> </li>
-            <li><a href="/reservation/create">Make Reservations</a> </li>
-
-        </ul>
-    </nav>
-    <div class="reservation-content">
-        <h2>OOPS!! Page not found!</h2>
-
+<%- include("./partials/head.ejs") %>
+<%- include("./partials/nav.ejs") %>
+<nav>
+    <div>
+        <a href="/">
+            <h1>Mawimbi Ressrvation</h1>
+        </a>
+        <p>Mawimbi Reservation Form</p>
     </div>
+    <ul>
+        <li><a href="/">Home</a> </li>
+        <li><a href="/about">About Us</a> </li>
+        <li><a href="/reservation/create">Make Reservations</a> </li>
 
+    </ul>
+</nav>
+<div class="reservation-content">
+    <h2>OOPS!! Page not found!</h2>
+
+</div>
+<%- include("./partials/footer.ejs") %>
 </body>
+
 
 </html>
