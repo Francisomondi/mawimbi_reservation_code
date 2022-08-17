@@ -1,12 +1,22 @@
 const express = require("express");
 const morgan = require("morgan");
+const mongoose = require("mongoose");
+
+
 
 
 const app = express();
 
+//connecting to the database
+const dbURI = "mongodb+srv://francis:1234@mawimbireservation.42akk5x.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect(dbURI, {
+    useNewUrlParser: true,
+    useunifiedTopology: true
+}).then((result) => app.listen(3000)).catch((err) => console.log(err));
+
 app.set("view engine", "ejs");
 
-app.listen(3000);
+
 
 //middleware/static files
 app.use(morgan("dev"));
