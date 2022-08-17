@@ -30,7 +30,7 @@ const reservationSchema = new Schema({
         type: String,
         required: true
     },
-    phone: {
+    Phone: {
         type: String,
         required: true
     },
@@ -43,3 +43,4 @@ const reservationSchema = new Schema({
 });
 
 const Reservation = mongoose.model("Reservation", reservationSchema);
+module.exports = Reservation;

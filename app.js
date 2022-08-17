@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const Reservation = require("./models/reservation");
 
 
 
@@ -8,7 +9,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 //connecting to the database
-const dbURI = "mongodb+srv://francis:1234@mawimbireservation.42akk5x.mongodb.net/?retryWrites=true&w=majority";
+const dbURI = "mongodb+srv://francis:1234@mawimbireservation.42akk5x.mongodb.net/MawimbiReservation?retryWrites=true&w=majority";
 mongoose.connect(dbURI, {
     useNewUrlParser: true,
     useunifiedTopology: true
@@ -21,6 +22,31 @@ app.set("view engine", "ejs");
 //middleware/static files
 app.use(morgan("dev"));
 app.use(express.static("public"));
+
+//mongoose and  mongo sandbox routes
+app.get("/add-reservation", (req, res) => {
+    const reservation = new Reservation({
+        firstname: "Francis",
+        lastname: "Omondi",
+        email: "Francisomondi17@gmail.com",
+        guests: "5",
+        date: "09/12/2022",
+        time: "11:45",
+        country: "Kenya",
+        Phone: "0740694770",
+        request: "just make it sweet"
+    });
+    reservation.save()
+        .then((result) => {
+            res.send(result)
+        })
+        .catch((err) => {
+            console.log(err)
+        });
+});
+
+
+
 //home route
 app.get("/", (req, res) => {
     const reservations = [{
