@@ -26,15 +26,15 @@ app.use(express.static("public"));
 //mongoose and  mongo sandbox routes
 app.get("/add-reservation", (req, res) => {
     const reservation = new Reservation({
-        firstname: "Francis",
-        lastname: "Omondi",
-        email: "Francisomondi17@gmail.com",
-        guests: "5",
+        firstname: "jeremy",
+        lastname: "Oguda",
+        email: "geremyoguda@gmail.com",
+        guests: "7",
         date: "09/12/2022",
         time: "11:45",
         country: "Kenya",
         Phone: "0740694770",
-        request: "just make it sweet"
+        request: "parte after parte"
     });
     reservation.save()
         .then((result) => {
@@ -43,6 +43,15 @@ app.get("/add-reservation", (req, res) => {
         .catch((err) => {
             console.log(err)
         });
+});
+
+app.get("/all-reservations", (req, res) => {
+    Reservation.find()
+        .then((result) => {
+            res.send(result)
+
+        })
+        .catch((err) => console.log(err));
 });
 
 
