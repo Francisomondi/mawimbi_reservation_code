@@ -1,6 +1,6 @@
 <%- include("./partials/head.ejs") %>
 <%- include("./partials/nav.ejs") %>
-<p>Mawimbi reservation </p>
+
 
 <div class="reservation-content">
     <h2>All Reservations</h2>
@@ -8,7 +8,7 @@
     <%  reservations.forEach(reservation=>{%>
     <h3 class="name"><%= reservation.firstname %></h3>
     <p class="email"><%= reservation.email %></p>
-    <p class="phone"><%= reservation.phone %></p>
+    <p class="phone"><%= reservation.Phone %></p>
     <p class="request"><%= reservation.request %></p>
 
     <% })%>
