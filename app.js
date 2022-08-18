@@ -21,6 +21,9 @@ app.set("view engine", "ejs");
 
 //middleware/static files
 app.use(morgan("dev"));
+app.use(express.urlencoded({
+    extended: true
+}));
 app.use(express.static("public"));
 
 //mongoose and  mongo sandbox routes
@@ -41,13 +44,26 @@ app.get("/about", (req, res) => {
 
 // reservation routes
 app.get("/reservations", (req, res) => {
-    Reservation.find()
+    Reservation.find().sort({
+            createdAt: -1
+        })
+
         .then((result) => {
             res.render("index", {
                 title: "All Reservations",
                 reservations: result
-            })
+            });
 
+        })
+        .catch((err) => {
+            console.log(err)
+        });
+});
+app.post("/reservations", (req, res) => {
+    const reservation = new Reservation(req.body);
+    reservation.save()
+        .then((result) => {
+            res.redirect("/reservations");
         })
         .catch((err) => {
             console.log(err)
