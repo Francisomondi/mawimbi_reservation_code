@@ -24,6 +24,7 @@ app.use(morgan("dev"));
 app.use(express.static("public"));
 
 //mongoose and  mongo sandbox routes
+//saving reservations to mondodb
 app.get("/add-reservation", (req, res) => {
     const reservation = new Reservation({
         firstname: "jeremy",
@@ -44,7 +45,7 @@ app.get("/add-reservation", (req, res) => {
             console.log(err)
         });
 });
-
+//fetching all reservations
 app.get("/all-reservations", (req, res) => {
     Reservation.find()
         .then((result) => {
@@ -53,6 +54,18 @@ app.get("/all-reservations", (req, res) => {
         })
         .catch((err) => console.log(err));
 });
+
+//finding single reservation
+
+app.get("/single-reservation", (req, res) => {
+    Reservation.findById("62fcf26a9d0908cfb2746cc8")
+        .then((result) => {
+            res.send(result)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+})
 
 
 
