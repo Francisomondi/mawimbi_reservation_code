@@ -59,6 +59,7 @@ app.get("/reservations", (req, res) => {
             console.log(err)
         });
 });
+//get all reservations
 app.post("/reservations", (req, res) => {
     const reservation = new Reservation(req.body);
     reservation.save()
@@ -67,10 +68,24 @@ app.post("/reservations", (req, res) => {
         })
         .catch((err) => {
             console.log(err)
+        });
+});
+
+//get single reservation
+app.get("/reservations/:id", (req, res) => {
+    const id = req.params.id;
+    Blog.findById(id)
+        .then((result) => {
+            res.render("details", {
+                    reservation: result
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
         })
 })
 
-
+//route to create reservation form
 app.get("/create", (req, res) => {
     res.render("create", {
         title: "create reservation"

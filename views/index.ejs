@@ -6,10 +6,12 @@
     <h2>All Reservations</h2>
     <% if (reservations.length> 0){%>
     <%  reservations.forEach(reservation=>{%>
-    <h3 class="name"><%= reservation.firstname %></h3>
-    <p class="email"><%= reservation.email %></p>
-    <p class="phone"><%= reservation.Phone %></p>
-    <p class="request"><%= reservation.request %></p>
+    <a class="single" href="/<%=reservation._id %>">
+        <h3 class="name"><%= reservation.firstname %></h3>
+        <p class="email"><%= reservation.email %></p>
+        <p class="phone"><%= reservation.Phone %></p>
+        <p class="request"><%= reservation.request %></p>
+    </a>
 
     <% })%>
 
