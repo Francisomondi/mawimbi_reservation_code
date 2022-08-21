@@ -170,3 +170,27 @@ textarea {
 #terms p {
   color: white;
 }
+
+.details {
+  position: relative;
+}
+
+.delete {
+  width: 800px;
+  margin-left: 100px;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.delete:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 3px rgb(255, 0, 0)
+}
+
+.content p {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin: 10px;
+  font-size: 21px;
+
+}

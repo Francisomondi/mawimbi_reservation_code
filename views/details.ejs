@@ -3,15 +3,17 @@
 <div class="details content">
     <h2><%= reservation.title%></h2>
     <div class="content">
-        <p><%=reservation.firstname%></p>
-        <p><%=reservation.lastname%></p>
-        <p><%=reservation.email%></p>
-        <p><%=reservation.guests%></p>
-        <p><%=reservation.date%></p>
-        <p><%=reservation.time%></p>
-        <p><%=reservation.country%></p>
-        <p><%=reservation.Phone%></p>
-        <p><%=reservation.request%></p>
+        <p>FIRST NAME: <%=reservation.firstname%></p>
+
+        <p>LAST NAME: <%=reservation.lastname%></p>
+        <p>EMAIL: <%=reservation.email%></p>
+        <p> PAX: <%=reservation.guests%></p>
+        <p> DATE: <%=reservation.date%></p>
+        <p>TIME:<%=reservation.time%></p>
+        <p>Country: <%=reservation.country%></p>
+        <p>PHONE: <%=reservation.Phone%></p>
+        <p>SPECIAL REQUEST: <%=reservation.request%></p>
+        <button class="delete" data-doc="<%=reservation._id%>">Delete</button>
     </div>
 
 </div>

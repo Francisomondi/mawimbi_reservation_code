@@ -72,9 +72,10 @@ app.post("/reservations", (req, res) => {
 });
 
 //get single reservation
-app.get("/:id", (req, res) => {
-    const id = mongoose.Types.ObjectId(req.params.id.trim());
+app.get("/:id([0-9a-fA-F]{24})", (req, res) => {
 
+    //const id = req.params.id;
+    const id = mongoose.Types.ObjectId(req.params.id.trim());
     Reservation.findById(id)
         .then(result => {
             res.render("details", {
