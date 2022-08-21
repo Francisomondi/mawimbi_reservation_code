@@ -1,0 +1,25 @@
+<%- include("./partials/head.ejs") %>
+<%- include("./partials/nav.ejs") %>
+<div class="details content">
+    <h2><%= reservation.title%></h2>
+    <div class="content">
+        <p><%=reservation.firstname%></p>
+        <p><%=reservation.lastname%></p>
+        <p><%=reservation.email%></p>
+        <p><%=reservation.guests%></p>
+        <p><%=reservation.date%></p>
+        <p><%=reservation.time%></p>
+        <p><%=reservation.country%></p>
+        <p><%=reservation.Phone%></p>
+        <p><%=reservation.request%></p>
+    </div>
+
+</div>
+
+
+
+<%- include("./partials/footer.ejs") %>
+</body>
+
+
+</html>

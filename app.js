@@ -72,19 +72,18 @@ app.post("/reservations", (req, res) => {
 });
 
 //get single reservation
-app.get("/reservations/:id", (req, res) => {
-    const id = req.params.id;
-    Blog.findById(id)
-        .then((result) => {
-            res.render("details", {
-                    reservation: result
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-        })
-})
+app.get("/:id", (req, res) => {
+    const id = mongoose.Types.ObjectId(req.params.id.trim());
 
+    Reservation.findById(id)
+        .then(result => {
+            res.render("details", {
+                reservation: result,
+                title: "Reservation Details"
+            });
+        })
+
+})
 //route to create reservation form
 app.get("/create", (req, res) => {
     res.render("create", {
